@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.aritzherrero.ejerciciog.controlador.EjercicioG_Principal_Control">
+    <children>
+        <VBox alignment="CENTER" prefHeight="560.0" prefWidth="760.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="760.0" spacing="10.0">
+                    <children>
+                        <Label text="Filtrar por nombre: " />
+                        <TextField fx:id="txtFiltrar" onKeyTyped="#filtrarTabla" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <TableView fx:id="tblvTabla" prefHeight="560.0" prefWidth="540.0">
+                    <columns>
+                        <TableColumn fx:id="tblcNombre" prefWidth="200.0" text="Nombre" />
+                        <TableColumn fx:id="tblcApellidos" prefWidth="429.0" text="Apellidos" />
+                        <TableColumn fx:id="tblcEdad" minWidth="0.0" prefWidth="130.0" text="Edad" />
+                    </columns>
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                </TableView>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                    <children>
+                        <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregarPersona" text="Agregar Persona" />
+                        <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#modificarPersona" text="Modificar Persona" />
+                        <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarPersona" text="Eliminar Persona" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</FlowPane>
